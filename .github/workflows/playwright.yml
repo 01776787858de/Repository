@@ -6,19 +6,37 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      target_url:
+        description: "Public website URL to inspect (https://...)"
+        required: true
+        type: string
+
+permissions:
+  contents: read
 
 jobs:
   test:
     timeout-minutes: 10
     runs-on: ubuntu-latest
+    env:
+      TARGET_URL: ${{ inputs.target_url || 'https://example.com' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - name: Install dependencies
         run: npm install
-      - name: Install Playwright browsers
+      - name: Install Playwright browser
         run: npx playwright install --with-deps chromium
-      - name: Run tests
+      - name: Run real browser inspection
         run: npm test
+      - name: Upload inspection report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: abu-jilan-link-check-report
+          path: reports/link-check-report.json
+          if-no-files-found: ignore
+          retention-days: 14
