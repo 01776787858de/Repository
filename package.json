@@ -1,0 +1,14 @@
+{
+  "name": "playwright-link-checker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A simple Playwright tool to open a URL and report page information.",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0"
+  }
+}
