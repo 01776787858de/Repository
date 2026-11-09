@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>فاحص الروابط | Abu Jilan</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1220;--panel:#121d30;--line:#263650;--text:#edf4ff;--muted:#a8b7ce;--blue:#4f8cff;--green:#26c281}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0,#1b3152 0,var(--bg) 58%);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);display:grid;place-items:center;padding:22px}
+main{width:min(100%,680px)}.brand{display:flex;align-items:center;gap:12px;margin-bottom:22px}.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,#438cff,#7658ed);display:grid;place-items:center;font-size:25px;box-shadow:0 10px 30px #315fbb55}.brand strong{font-size:19px}.brand small{display:block;color:var(--muted);margin-top:3px}
+.card{background:#111c2eec;border:1px solid var(--line);border-radius:24px;padding:clamp(22px,5vw,38px);box-shadow:0 24px 70px #0006}
+h1{font-size:clamp(25px,5vw,36px);margin:0 0 10px}p{color:var(--muted);line-height:1.8;margin:0 0 24px}
+label{display:block;font-weight:700;margin-bottom:10px}.input-wrap{display:flex;gap:9px;flex-wrap:wrap}
+input{flex:1;min-width:180px;background:#0a1424;border:1px solid #344763;border-radius:13px;padding:16px;color:white;font-size:16px;direction:ltr;text-align:left;outline:none}
+input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #4f8cff22}
+button{border:0;border-radius:13px;padding:0 21px;min-height:52px;font-size:15px;font-weight:800;cursor:pointer;background:var(--blue);color:white}
+button.secondary{background:#263750;border:1px solid #3b5272}button:disabled{opacity:.45;cursor:not-allowed}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:13px}.status{display:none;margin-top:18px;padding:14px 16px;border:1px solid var(--line);background:#0a1424;border-radius:13px;line-height:1.7}.status.show{display:block}.status.ok{border-color:#237e5c}.status.bad{border-color:#9b5b38}
+.note{margin-top:24px;border-top:1px solid var(--line);padding-top:18px;font-size:13px;color:var(--muted);line-height:1.8}.note b{color:#f7c66b}.foot{text-align:center;color:#71829d;font-size:12px;margin-top:18px}
+</style>
+</head>
+<body>
+<main>
+ <div class="brand"><div class="logo">🔗</div><div><strong>Abu Jilan · Link Checker</strong><small>أداة فتح وفحص الروابط</small></div></div>
+ <section class="card">
+  <h1>افحص أي رابط بسهولة</h1>
+  <p>اكتب رابط الموقع، ثم افتحه في تبويب جديد أو نفّذ الفحص السريع للتأكد من صحة صيغة الرابط.</p>
+  <label for="url">رابط الموقع</label>
+  <div class="input-wrap"><input id="url" type="text" inputmode="url" placeholder="https://example.com" autocomplete="url"><button id="check">فحص الرابط</button></div>
+  <div class="actions"><button class="secondary" id="open" disabled>فتح الموقع بمتصفح جديد ↗</button><button class="secondary" id="clear">مسح</button></div>
+  <div id="status" class="status" role="status" aria-live="polite"></div>
+  <div class="note"><b>معلومة مهمة:</b> هذه النسخة تتحقق من صيغة الرابط وتفتح الموقع. فحص صفحات الموقع فعلياً باستخدام Playwright (مثل النقر واختبار الأزرار واكتشاف الأخطاء) يحتاج إلى خادم تشغيل آمن، ولا يمكن تنفيذه من صفحة المتصفح وحدها.</div>
+ </section>
+ <div class="foot">نسخة تجريبية · لا تدخل كلمات مرور أو بيانات خاصة</div>
+</main>
+<script>
+const field=document.getElementById('url'),check=document.getElementById('check'),openBtn=document.getElementById('open'),clearBtn=document.getElementById('clear'),statusBox=document.getElementById('status');
+let validUrl='';
+function parseUrl(){let raw=field.value.trim();if(!raw){return {error:'اكتب رابط الموقع أولاً.'}}if(!/^https?:\/\//i.test(raw))raw='https://'+raw;try{const u=new URL(raw);if(!['http:','https:'].includes(u.protocol))throw Error();return {url:u}}catch{return {error:'الرابط غير صحيح. مثال: https://example.com'}}}
+function show(message,kind){statusBox.textContent=message;statusBox.className='status show '+kind}
+function validate(){const result=parseUrl();if(result.error){validUrl='';openBtn.disabled=true;show(result.error,'bad');return false}validUrl=result.url.href;openBtn.disabled=false;show('صيغة الرابط صحيحة: '+validUrl,'ok');return true}
+check.addEventListener('click',validate);
+field.addEventListener('keydown',e=>{if(e.key==='Enter')validate()});
+field.addEventListener('input',()=>{validUrl='';openBtn.disabled=true;statusBox.className='status'});
+openBtn.addEventListener('click',()=>{if(validUrl)window.open(validUrl,'_blank','noopener,noreferrer')});
+clearBtn.addEventListener('click',()=>{field.value='';validUrl='';openBtn.disabled=true;statusBox.className='status';field.focus()});
+</script>
+</body>
+</html>
