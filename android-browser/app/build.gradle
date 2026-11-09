@@ -20,5 +20,5 @@ android {
 
 dependencies {
     // GeckoView is Mozilla's browser engine (the same engine family used by Firefox).
-    implementation "org.mozilla.geckoview:geckoview-stable:+"
+    implementation "org.mozilla.geckoview:geckoview:159.0.20261022150525"
 }
