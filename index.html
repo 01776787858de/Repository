@@ -18,25 +18,25 @@ button.secondary{background:#263750;border:1px solid #3b5272}
 .small{font-size:13px;color:#9aabc2;line-height:1.8}
 </style></head>
 <body><main>
-<div class="brand"><div class="logo">🛡️</div><div><b>Abu Jilan Browser</b><small>متصفح تجريبي مع تقليل النوافذ المنبثقة</small></div></div>
+<div class="brand"><div class="logo">🛡️</div><div><b>Abu Jilan Browser</b><small>متصفح أونلاين — بدون تثبيت APK</small></div></div>
 <section class="card">
 <h1>تصفّح المواقع من هنا</h1>
-<p>الصق رابط الموقع واضغط «تصفح». جرّب مثلاً dzapk.com. النافذة أدناه معزولة لمنع النوافذ المنبثقة والتنقل غير المصرّح به.</p>
+<p>الصق رابط الموقع واضغط «تصفح». جرّب مثلاً dzapk.com. الصفحة أدناه معزولة عن موقعك لحماية واجهة المتصفح. الصق الرابط وجرّب فتحه هنا.</p>
 <div class="bar"><input id="address" value="https://dzapk.com/youtube-music-premium-unlocked" placeholder="https://example.com" autocomplete="url"><button id="go">تصفح</button></div>
 <div class="tools"><button class="secondary" id="back">رجوع</button><button class="secondary" id="forward">تقدم</button><button class="secondary" id="reload">تحديث</button><button class="secondary" id="open">فتح خارجياً ↗</button></div>
-<iframe id="browser" title="متصفح Abu Jilan التجريبي" sandbox="allow-scripts allow-forms allow-same-origin" referrerpolicy="no-referrer"></iframe>
-<div id="status" class="status" role="status" aria-live="polite">اكتب رابطاً واضغط «تصفح» لبدء التجربة.</div>
+<iframe id="browser" title="متصفح Abu Jilan التجريبي" sandbox="allow-scripts allow-forms" referrerpolicy="no-referrer"></iframe>
+<div id="status" class="status" role="status" aria-live="polite">جاهز للتصفح أونلاين. اكتب رابطاً واضغط «تصفح».</div>
 </section>
 <section class="card">
-<b>مهم قبل التجربة</b>
-<p class="small">هذه نسخة أولية داخل صفحة الويب: تمنع النافذة المضمّنة من فتح نوافذ منبثقة أو التحكم بالصفحة الرئيسية، لكنها لا تحجب كل إعلانات البانرات أو إعلانات الفيديو. بعض المواقع، ومنها مواقع كثيرة، تمنع عرض نفسها داخل إطار خارجي؛ عندها استخدم «فتح خارجياً». الحجب الكامل يحتاج تطبيق متصفح فعلياً بمحرك يدعم قوائم حجب الإعلانات، ولا يمكن ضمانه بصفحة GitHub Pages وحدها.</p>
+<b>كيف يعمل الحجب في النسخة الأونلاين؟</b>
+<p class="small">هذه النسخة تعمل من المتصفح مباشرة ولا تحتاج APK أو تثبيت. تعزل الصفحة المفتوحة وتحدّ من النوافذ المنبثقة داخل الإطار، لكنها لا تستطيع اعتراض كل طلبات الإعلانات في المواقع الخارجية بسبب حماية Chrome وسياسة المواقع. بعض المواقع تمنع التضمين؛ عندها استخدم «فتح خارجياً». الحجب الأقوى داخل كل المواقع يحتاج خدمة وسيطة (Proxy) أو متصفحاً/إضافة تملك صلاحية فلترة طلبات الشبكة.</p>
 </section>
 </main>
 <script>
 const address=document.getElementById('address'),frame=document.getElementById('browser'),status=document.getElementById('status');
 let current='';
 function normalize(){let value=address.value.trim();if(!value)return null;if(!/^https?:\/\//i.test(value))value='https://'+value;try{const u=new URL(value);if(!['http:','https:'].includes(u.protocol))return null;return u.href}catch{return null}}
-function navigate(){const url=normalize();if(!url){status.textContent='الرابط غير صحيح. استخدم رابطاً يبدأ بـ https:// أو http://';return}current=url;address.value=url;frame.src=url;status.textContent='جارٍ محاولة فتح الموقع داخل الإطار. إذا ظهرت صفحة فارغة أو رسالة رفض، فالموقع يمنع التضمين؛ جرّب «فتح خارجياً». لا يعني ذلك أن الإعلانات حُجبت بالكامل.'}
+function navigate(){const url=normalize();if(!url){status.textContent='الرابط غير صحيح. استخدم رابطاً يبدأ بـ https:// أو http://';return}current=url;address.value=url;frame.src=url;status.textContent='جارٍ محاولة فتح الموقع داخل الإطار. إذا ظهرت صفحة فارغة أو رسالة رفض، فالموقع يمنع التضمين؛ جرّب «فتح خارجياً». هذه الواجهة لا تضمن حجب كل الإعلانات؛ بعض المواقع تمنع التضمين داخل الإطار.'}
 document.getElementById('go').onclick=navigate;
 address.addEventListener('keydown',e=>{if(e.key==='Enter')navigate()});
 document.getElementById('reload').onclick=()=>{if(current)frame.src=current};
