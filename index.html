@@ -13,12 +13,12 @@ button{border:0;border-radius:13px;padding:0 21px;min-height:52px;font-size:15px
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:13px}.status{display:none;margin-top:18px;padding:14px 16px;border:1px solid var(--line);background:#0a1424;border-radius:13px;line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere}.status.show{display:block}.status.ok{border-color:#237e5c}.status.bad{border-color:#9b5b38}
 .steps{margin-top:24px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:14px;line-height:2}.steps b{color:#f7c66b}.foot{text-align:center;color:#71829d;font-size:12px;margin-top:18px}
 </style></head><body><main>
-<div class="brand"><div class="logo">🔗</div><div><strong>Abu Jilan · Link Checker</strong><small>فحص حقيقي للمواقع بواسطة متصفح Playwright</small></div></div>
-<section class="card"><h1>افحص أي رابط بسهولة</h1><p>أدخل رابطاً عاماً. ستبدأ أداة Playwright بفتح الموقع في متصفح حقيقي وفحص استجابة الصفحة والعنوان والأخطاء والصور.</p>
+<div class="brand"><div class="logo">🔗</div><div><strong>Abu Jilan · Link Checker</strong><small>فحص الصفحات وجمع الروابط العامة</small></div></div>
+<section class="card"><h1>افحص الصفحة واجمع روابطها</h1><p>أدخل رابطاً عاماً. ستفتح Playwright الموقع وتجمع الروابط الظاهرة وعناوينها، وتفحص الصور وأخطاء الصفحة والنوافذ المنبثقة.</p>
 <label for="url">رابط الموقع</label><div class="input-wrap"><input id="url" type="url" inputmode="url" placeholder="https://example.com" autocomplete="url"><button id="check">تحقق من الرابط</button></div>
-<div class="actions"><button class="secondary" id="run" disabled>تشغيل فحص Playwright ↗</button><button class="secondary" id="clear">مسح</button></div>
+<div class="actions"><button class="secondary" id="run" disabled>فحص الصفحة وجمع الروابط ↗</button><button class="secondary" id="clear">مسح</button></div>
 <div id="status" class="status" role="status" aria-live="polite"></div>
-<div class="steps"><b>كيف يعمل الفحص الحقيقي؟</b><br>1. أدخل الرابط واضغط «تشغيل فحص Playwright».<br>2. افتح GitHub Actions من الزر الذي سيظهر لك.<br>3. اختر «Playwright Tests» ثم «Run workflow»، والصق الرابط في خانة Target URL.<br>4. بعد انتهاء الفحص افتح سجل التشغيل وحمّل تقرير الفحص من Artifacts.<br><br>ملاحظة: الفحص يتم على خوادم GitHub، وليس مباشرة داخل هاتفك. استخدم روابط عامة فقط ولا تدخل كلمات مرور أو بيانات خاصة.</div>
+<div class="steps"><b>كيف يعمل الفحص الحقيقي؟</b><br>1. أدخل الرابط واضغط «تشغيل فحص Playwright».<br>2. افتح GitHub Actions من الزر الذي سيظهر لك.<br>3. اختر «Playwright Tests» ثم «Run workflow»، والصق الرابط في خانة Target URL.<br>4. بعد انتهاء الفحص حمّل تقرير JSON من Artifacts؛ ستجد فيه الروابط وعناوينها.<br><br>ملاحظة: الأداة تجمع روابط الصفحة دون الضغط عليها أو تنزيل ملفات أو اتباع إعلانات أو تجاوز الحماية. الفحص يتم على خوادم GitHub؛ استخدم روابط عامة فقط.</div>
 </section><div class="foot">Abu Jilan · Link Checker</div></main>
 <script>
 const field=document.getElementById('url'),check=document.getElementById('check'),run=document.getElementById('run'),clear=document.getElementById('clear'),box=document.getElementById('status');let target='';
