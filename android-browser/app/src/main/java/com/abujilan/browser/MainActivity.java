@@ -22,11 +22,11 @@ public class MainActivity extends Activity {
     private int blocked = 0;
     private final Set<String> blockedHosts = new HashSet<>(Arrays.asList(
         "doubleclick.net","googlesyndication.com","googleadservices.com","adservice.google.com",
-        "adnxs.com"," تبلیغات.com","taboola.com","outbrain.com","popads.net","popcash.net",
-        "exoclick.com"," propellerads.com","adsterra.com"," serves?","adskeeper.co.uk",
-        "adform.net","criteo.com"," casalemedia.com","openx.net","rubiconproject.com",
-        " pubmatic.com","smartadserver.com","advertising.com","zedo.com","adroll.com",
-        "scorecardresearch.com","amazon-adsystem.com","imasdk.googleapis.com"
+        "adnxs.com","taboola.com","outbrain.com","popads.net","popcash.net","exoclick.com",
+        "propellerads.com","adsterra.com","adskeeper.co.uk","adform.net","criteo.com",
+        "openx.net","rubiconproject.com","pubmatic.com","smartadserver.com","advertising.com",
+        "zedo.com","adroll.com","scorecardresearch.com","amazon-adsystem.com","imasdk.googleapis.com",
+        "togglevpn.app","www.togglevpn.app"
     ));
     private final String[] pathSignals = {"/ads/","/adserver/","/banner-ad","/popunder","/popup-ad","/tracking/"};
 
