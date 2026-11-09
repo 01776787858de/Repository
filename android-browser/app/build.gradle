@@ -3,6 +3,7 @@ plugins { id 'com.android.application' }
 android {
     namespace 'com.abujilan.browser'
     compileSdk 37
+    compileSdkExtension 1
 
     defaultConfig {
         applicationId 'com.abujilan.browser'
