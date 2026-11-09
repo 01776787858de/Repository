@@ -27,6 +27,7 @@ public class MainActivity extends Activity {
     private GeckoView browserView;
     private EditText address;
     private TextView protectionStatus;
+    private String currentPageUrl;
 
     @Override
     public void onCreate(Bundle state) {
@@ -129,14 +130,14 @@ public class MainActivity extends Activity {
         session.setProgressDelegate(new GeckoSession.ProgressDelegate() {
             @Override
             public void onPageStart(GeckoSession current, String url) {
+                currentPageUrl = url;
                 runOnUiThread(() -> address.setText(url));
             }
 
             @Override
             public void onPageStop(GeckoSession current, boolean success) {
                 runOnUiThread(() -> {
-                    String currentUrl = current.getUri();
-                    if (currentUrl != null) address.setText(currentUrl);
+                    if (currentPageUrl != null) address.setText(currentPageUrl);
                 });
             }
         });
