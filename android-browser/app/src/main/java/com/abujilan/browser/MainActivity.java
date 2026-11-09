@@ -36,6 +36,8 @@ public class MainActivity extends Activity {
 
         if (runtime == null) {
             ContentBlocking.Settings blocking = new ContentBlocking.Settings.Builder()
+                .cookieBehavior(ContentBlocking.CookieBehavior.ACCEPT_FIRST_PARTY_AND_ISOLATE_OTHERS)
+                .cookieBehaviorPrivateMode(ContentBlocking.CookieBehavior.ACCEPT_FIRST_PARTY_AND_ISOLATE_OTHERS)
                 .antiTracking(
                     ContentBlocking.AntiTracking.AD
                     | ContentBlocking.AntiTracking.ANALYTIC
