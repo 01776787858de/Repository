@@ -2,67 +2,46 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101827">
-<title>Abu Jilan | حجب الإعلانات</title>
+<title>Abu Jilan Browser</title>
 <style>
-:root{color-scheme:dark;--bg:#09111f;--panel:#121e31;--line:#293b56;--text:#edf4ff;--muted:#a8b7ce;--blue:#4f8cff;--green:#27c58a}
-*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0,#1b3152 0,var(--bg) 60%);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);padding:22px}
-main{width:min(100%,760px);margin:0 auto}.brand{display:flex;align-items:center;gap:12px;margin:10px 0 22px}.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,#438cff,#7658ed);display:grid;place-items:center;font-size:25px}.brand strong{font-size:19px}.brand small{display:block;color:var(--muted);margin-top:3px}
-.card{background:#111c2eec;border:1px solid var(--line);border-radius:22px;padding:clamp(20px,4vw,32px);margin:16px 0;box-shadow:0 18px 55px #0004}
-h1{font-size:clamp(26px,5vw,36px);margin:0 0 10px}h2{font-size:22px;margin:0 0 9px}p{color:var(--muted);line-height:1.85;margin:0 0 18px}
-.pill{display:inline-block;background:#123b32;color:#73e3b5;border:1px solid #236d55;padding:5px 10px;border-radius:999px;font-size:12px;margin-bottom:13px}
-.host{display:flex;gap:10px;align-items:center;background:#091525;border:1px solid #38516f;border-radius:13px;padding:12px;margin:16px 0;direction:ltr}
-code{font-size:15px;overflow-wrap:anywhere;flex:1;color:#a9d0ff}
-button{border:0;border-radius:12px;padding:13px 18px;min-height:46px;font-size:14px;font-weight:800;cursor:pointer;background:var(--blue);color:white}
+:root{color-scheme:dark;--bg:#09111f;--panel:#121e31;--line:#293b56;--text:#edf4ff;--muted:#a8b7ce;--blue:#4f8cff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0,#1b3152 0,#09111f 60%);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);padding:16px}
+main{max-width:900px;margin:auto}.brand{display:flex;align-items:center;gap:12px;margin:8px 0 18px}.logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#438cff,#7658ed);display:grid;place-items:center;font-size:24px}.brand small{display:block;color:var(--muted);margin-top:3px}
+.card{background:#111c2eec;border:1px solid #293b56;border-radius:20px;padding:18px;margin:14px 0}
+h1{font-size:27px;margin:0 0 8px}p{color:var(--muted);line-height:1.8;margin:0 0 15px}
+input{min-width:0;flex:1;background:#091525;border:1px solid #3a506e;border-radius:12px;padding:14px;color:white;font-size:15px;direction:ltr;text-align:left}
+button{border:0;border-radius:11px;background:#4f8cff;color:white;font-weight:800;padding:13px 16px;cursor:pointer}
 button.secondary{background:#263750;border:1px solid #3b5272}
-.note{font-size:13px;color:#f5ca78;line-height:1.8;margin-top:14px}
-.steps{display:grid;gap:12px;counter-reset:step}.step{display:flex;gap:12px;align-items:flex-start;color:var(--muted);line-height:1.8}.step:before{counter-increment:step;content:counter(step);flex:0 0 27px;height:27px;border-radius:9px;background:#263b59;color:#fff;display:grid;place-items:center;font-weight:800}
-.status{display:none;margin-top:12px;padding:12px;border:1px solid var(--line);background:#091525;border-radius:12px;line-height:1.7}.status.show{display:block}
-input{width:100%;background:#091525;border:1px solid #344763;border-radius:12px;padding:15px;color:white;font-size:16px;direction:ltr;text-align:left;margin:8px 0}
-.actions{display:flex;gap:9px;flex-wrap:wrap}.foot{text-align:center;color:#71829d;font-size:12px;margin:22px 0}
+.bar{display:flex;gap:8px;flex-wrap:wrap}.bar input{flex:1 1 230px}.tools{display:flex;gap:8px;margin:10px 0;flex-wrap:wrap}
+#browser{width:100%;height:68vh;min-height:430px;border:1px solid #3a506e;border-radius:14px;background:white}
+.status{font-size:13px;line-height:1.8;color:#f4cd80;margin-top:10px;white-space:pre-wrap}
+.small{font-size:13px;color:#9aabc2;line-height:1.8}
 </style></head>
 <body><main>
-<div class="brand"><div class="logo">🛡️</div><div><strong>Abu Jilan · AdBlock</strong><small>مساعد حجب الإعلانات على جهازك</small></div></div>
+<div class="brand"><div class="logo">🛡️</div><div><b>Abu Jilan Browser</b><small>متصفح تجريبي مع تقليل النوافذ المنبثقة</small></div></div>
 <section class="card">
-<span class="pill">الحل الأفضل لأندرويد</span>
-<h1>خفّف الإعلانات أثناء التصفح</h1>
-<p>حتى يتم حجب الإعلانات في Chrome وباقي التطبيقات، لازم تفعّل DNS خاص على الجهاز. صفحة الإنترنت وحدها ما بتقدر تمنع إعلانات المواقع الأخرى أو تغيّر إعدادات الهاتف نيابةً عنك.</p>
-<h2>عنوان الحجب</h2>
-<div class="host"><code id="dns">dns.adguard-dns.com</code><button id="copy">نسخ</button></div>
-<div id="copyStatus" class="status" role="status" aria-live="polite"></div>
-<div class="note">ملاحظة: الحجب يعتمد على خادم DNS، لذلك قد لا يمنع كل إعلان، خصوصاً الإعلانات المدمجة داخل الفيديو أو بعض التطبيقات. وقد تحتاج لإيقاف VPN إذا كان يفرض DNS مختلفاً.</div>
+<h1>تصفّح المواقع من هنا</h1>
+<p>الصق رابط الموقع واضغط «تصفح». جرّب مثلاً dzapk.com. النافذة أدناه معزولة لمنع النوافذ المنبثقة والتنقل غير المصرّح به.</p>
+<div class="bar"><input id="address" value="https://dzapk.com/youtube-music-premium-unlocked" placeholder="https://example.com" autocomplete="url"><button id="go">تصفح</button></div>
+<div class="tools"><button class="secondary" id="back">رجوع</button><button class="secondary" id="forward">تقدم</button><button class="secondary" id="reload">تحديث</button><button class="secondary" id="open">فتح خارجياً ↗</button></div>
+<iframe id="browser" title="متصفح Abu Jilan التجريبي" sandbox="allow-scripts allow-forms allow-same-origin" referrerpolicy="no-referrer"></iframe>
+<div id="status" class="status" role="status" aria-live="polite">اكتب رابطاً واضغط «تصفح» لبدء التجربة.</div>
 </section>
 <section class="card">
-<h2>طريقة التفعيل على Samsung</h2>
-<p>اتبع الخطوات التالية مرة واحدة:</p>
-<div class="steps">
-<div class="step">افتح <b>الإعدادات</b> في الهاتف.</div>
-<div class="step">ادخل إلى <b>الاتصالات</b>.</div>
-<div class="step">اختر <b>المزيد من ضبط الاتصال</b> (More connection settings).</div>
-<div class="step">اضغط <b>DNS خاص</b> (Private DNS).</div>
-<div class="step">اختر <b>اسم مضيف موفّر DNS الخاص</b>، والصق العنوان الموجود بالأعلى.</div>
-<div class="step">اضغط <b>حفظ</b>، ثم جرّب فتح موقعاً كنت ترى فيه إعلانات.</div>
-</div>
+<b>مهم قبل التجربة</b>
+<p class="small">هذه نسخة أولية داخل صفحة الويب: تمنع النافذة المضمّنة من فتح نوافذ منبثقة أو التحكم بالصفحة الرئيسية، لكنها لا تحجب كل إعلانات البانرات أو إعلانات الفيديو. بعض المواقع، ومنها مواقع كثيرة، تمنع عرض نفسها داخل إطار خارجي؛ عندها استخدم «فتح خارجياً». الحجب الكامل يحتاج تطبيق متصفح فعلياً بمحرك يدعم قوائم حجب الإعلانات، ولا يمكن ضمانه بصفحة GitHub Pages وحدها.</p>
 </section>
-<section class="card">
-<h2>اختبر إعدادك</h2>
-<p>بعد الحفظ، افتح صفحة اختبار AdGuard للتأكد من أن الاتصال بخدمة DNS يعمل.</p>
-<div class="actions"><button id="test">فتح صفحة الاختبار ↗</button><button class="secondary" id="copyAgain">نسخ عنوان DNS</button></div>
-</section>
-<section class="card">
-<h2>فاحص الروابط</h2>
-<p>ما زالت أداة فحص الروابط متاحة. أدخل رابطاً عاماً لتجهيز فحص Playwright وجمع الروابط الظاهرة وأخطاء الصفحة.</p>
-<label for="url">رابط الموقع</label><input id="url" type="url" inputmode="url" placeholder="https://example.com">
-<div class="actions"><button id="check">تحقق من الرابط</button><button class="secondary" id="run" disabled>فتح GitHub Actions ↗</button></div>
-<div id="linkStatus" class="status" role="status" aria-live="polite"></div>
-</section>
-<div class="foot">Abu Jilan · أدوات التصفح</div></main>
+</main>
 <script>
-const dns='dns.adguard-dns.com';
-async function copyDns(){const box=document.getElementById('copyStatus');try{await navigator.clipboard.writeText(dns);box.textContent='تم نسخ عنوان DNS. الصقه في إعدادات DNS الخاص.';}catch{box.textContent='انسخ العنوان يدوياً: '+dns;}box.className='status show';}
-document.getElementById('copy').onclick=copyDns;
-document.getElementById('copyAgain').onclick=copyDns;
-document.getElementById('test').onclick=()=>window.open('https://adguard.com/en/test.html','_blank','noopener,noreferrer');
-const field=document.getElementById('url'),run=document.getElementById('run'),status=document.getElementById('linkStatus');let target='';
-document.getElementById('check').onclick=()=>{let s=field.value.trim();if(!s){target='';run.disabled=true;status.textContent='اكتب رابط الموقع أولاً.';status.className='status show';return;}if(!/^https?:\/\//i.test(s))s='https://'+s;try{const u=new URL(s);if(!['http:','https:'].includes(u.protocol))throw 0;target=u.href;run.disabled=false;status.textContent='الرابط جاهز للفحص: '+target;status.className='status show';}catch{target='';run.disabled=true;status.textContent='الرابط غير صحيح.';status.className='status show';}};
-run.onclick=()=>{if(!target)return;const u='https://github.com/01776787858de/Repository/actions/workflows/playwright.yml';status.textContent='في GitHub اختر Run workflow والصق هذا الرابط في Target URL:\n'+target;window.open(u,'_blank','noopener,noreferrer');};
+const address=document.getElementById('address'),frame=document.getElementById('browser'),status=document.getElementById('status');
+let current='';
+function normalize(){let value=address.value.trim();if(!value)return null;if(!/^https?:\/\//i.test(value))value='https://'+value;try{const u=new URL(value);if(!['http:','https:'].includes(u.protocol))return null;return u.href}catch{return null}}
+function navigate(){const url=normalize();if(!url){status.textContent='الرابط غير صحيح. استخدم رابطاً يبدأ بـ https:// أو http://';return}current=url;address.value=url;frame.src=url;status.textContent='جارٍ محاولة فتح الموقع داخل الإطار. إذا ظهرت صفحة فارغة أو رسالة رفض، فالموقع يمنع التضمين؛ جرّب «فتح خارجياً». لا يعني ذلك أن الإعلانات حُجبت بالكامل.'}
+document.getElementById('go').onclick=navigate;
+address.addEventListener('keydown',e=>{if(e.key==='Enter')navigate()});
+document.getElementById('reload').onclick=()=>{if(current)frame.src=current};
+document.getElementById('back').onclick=()=>{try{frame.contentWindow.history.back()}catch{}};
+document.getElementById('forward').onclick=()=>{try{frame.contentWindow.history.forward()}catch{}};
+document.getElementById('open').onclick=()=>{const url=normalize();if(url)window.open(url,'_blank','noopener,noreferrer')};
+navigate();
 </script></body></html>
