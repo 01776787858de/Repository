@@ -23,7 +23,7 @@ app.post("/api/check-email", limiter, async (req, res) => {
   const email = String(req.body?.email || "").trim().toLowerCase();
   if (req.body?.consent !== true)
     return res.status(400).json({ error: "يجب تأكيد أنك تملك هذا البريد أو لديك إذن بفحصه." });
-  if (email.length > 254 || !/^[^\s@]+@[^\s@]+\\.[^\s@]+$/.test(email))
+  if (email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
     return res.status(400).json({ error: "يرجى إدخال عنوان بريد إلكتروني صحيح." });
   if (!HIBP_API_KEY)
     return res.status(503).json({ error: "خدمة الفحص غير مفعّلة بعد. أضف مفتاح HIBP_API_KEY إلى إعدادات الخادم." });
