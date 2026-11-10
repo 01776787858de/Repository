@@ -6,7 +6,7 @@ const sourceResults=document.getElementById("sourceResults");
 const copyStatus=document.getElementById("copyStatus");
 
 function showMessage(text,error=false){message.textContent=text;message.className=error?"message error":"message";}
-function validEmail(email){return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)&&email.length<=254;}
+function validEmail(email){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)&&email.length<=254;}
 scanBtn.addEventListener("click",()=>{
  const email=emailInput.value.trim();
  if(!email)return showMessage("أدخل عنوان البريد الإلكتروني أولاً.",true);
