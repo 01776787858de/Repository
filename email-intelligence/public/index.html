@@ -34,5 +34,35 @@
 </div>
 <p class="disclaimer">تنبيه: هذه المصادر لا تشارك نتائجها مع بعضها. بعض الخدمات تستخدم قواعد بيانات متشابهة، وعدم ظهور نتيجة لا يثبت أن البريد لم يتعرض لأي تسريب.</p>
 </section>
-<footer>هذا الموقع أداة توعوية. لا يعرض كلمات مرور أو بيانات دخول أو معلومات خاصة مسرّبة.</footer>
+<section id="reportBuilder" class="panel report-builder hidden">
+  <div class="eyebrow">تقرير تنبيه أمني</div>
+  <h2>إنشاء تقرير PDF لصاحب البريد</h2>
+  <p class="source-intro">أدخل فقط النتائج التي تحققت منها بنفسك داخل المصادر. لن نخترع نتائج أو نرسل تنبيهاً لصاحب البريد تلقائياً.</p>
+  <label for="reportSource">المصدر الذي أكد النتيجة</label>
+  <input id="reportSource" class="report-input" placeholder="مثال: Have I Been Pwned">
+  <label for="reportDate">تاريخ الحادثة (إن ظهر في المصدر)</label>
+  <input id="reportDate" class="report-input" placeholder="مثال: 2024-03">
+  <label for="reportData">أنواع البيانات المذكورة في المصدر</label>
+  <input id="reportData" class="report-input" placeholder="مثال: البريد الإلكتروني، كلمة مرور مجزأة (اكتب الفئات فقط)">
+  <label for="reportNotes">ملاحظات إضافية</label>
+  <textarea id="reportNotes" class="report-input" rows="3" placeholder="اكتب وصفاً مختصراً دون إدراج كلمات مرور أو بيانات شخصية مسرّبة."></textarea>
+  <button id="makeReport" class="report-button">إنشاء التقرير وحفظه PDF</button>
+  <p class="privacy-note">يُنشأ التقرير على جهازك باستخدام نافذة الطباعة؛ اختر «حفظ بتنسيق PDF». لا يتم إرسال التقرير أو البريد إلى الخادم.</p>
+</section>
+<section id="printReport" class="print-report hidden" aria-label="تقرير أمني">
+  <div class="report-brand">ABU JILAN OSINT</div>
+  <h1>تقرير تنبيه أمني للبريد الإلكتروني</h1>
+  <p class="report-subtitle">تقرير توعوي مبني على نتائج أدخلها مُعدّ التقرير بعد التحقق من المصدر.</p>
+  <div class="report-alert">تنبيه: ظهور عنوان بريد في حادثة تسريب لا يثبت وحده أن الحساب مخترق حالياً.</div>
+  <div class="report-line"><strong>البريد المفحوص:</strong> <span id="pdfEmail"></span></div>
+  <div class="report-line"><strong>تاريخ إعداد التقرير:</strong> <span id="pdfCreated"></span></div>
+  <div class="report-line"><strong>المصدر الذي تم التحقق منه:</strong> <span id="pdfSource"></span></div>
+  <div class="report-line"><strong>تاريخ الحادثة:</strong> <span id="pdfDate"></span></div>
+  <div class="report-line"><strong>فئات البيانات المذكورة:</strong> <span id="pdfData"></span></div>
+  <h2>ملاحظات التحقق</h2><p id="pdfNotes"></p>
+  <h2>خطوات الحماية المقترحة</h2>
+  <ul><li>غيّر كلمة المرور من الموقع أو التطبيق الرسمي.</li><li>استخدم كلمة مرور فريدة لا تستخدمها في مواقع أخرى.</li><li>فعّل المصادقة الثنائية إن كانت متاحة.</li><li>راجع الأجهزة والجلسات النشطة وسجّل الخروج من غير المعروف منها.</li><li>احذر رسائل التصيد ولا تشارك رموز التحقق.</li></ul>
+  <p class="report-foot">هذا التقرير لا يحتوي كلمات مرور أو بيانات دخول مسرّبة. يجب على صاحب البريد مراجعة المصدر الأصلي والتحقق بنفسه. لا يمثل التقرير تأكيداً على اختراق الحساب.</p>
+</section>
+<footer>هذا الموقع أداة توعوية. لا يعرض كلمات مرور أو بيانات دخول أو معلومات خاصة مسرّبة.</footer>هذا الموقع أداة توعوية. لا يعرض كلمات مرور أو بيانات دخول أو معلومات خاصة مسرّبة.</footer>
 </main><script src="/app.js"></script></body></html>
