@@ -1,0 +1,12 @@
+{
+  "name": "markaz-email-intelligence",
+  "version": "1.0.0",
+  "private": true,
+  "description": "واجهة عربية لفحص تسريبات البريد الإلكتروني عبر مصادر موثوقة",
+  "scripts": { "start": "node server.js" },
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0"
+  }
+}
