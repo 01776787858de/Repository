@@ -19,3 +19,25 @@
 .source-tag.other{background:#29334b;color:#b7c8ef}
 .section-title{margin-bottom:12px}
 @media(max-width:650px){.copy-row{align-items:flex-start;flex-direction:column}.source-card{min-height:0}}
+
+.report-builder{margin:25px 0 40px;display:grid;gap:10px}
+.report-builder h2{margin:0 0 4px}
+.report-input{width:100%;background:#0b1524;border:1px solid #344a64;border-radius:10px;padding:12px;color:#fff;font:inherit;margin-bottom:8px}
+textarea.report-input{resize:vertical}
+.report-button{background:#65d6c4;color:#09201f;border:0;border-radius:12px;padding:14px;font:700 15px 'Cairo';cursor:pointer}
+.print-report{background:#fff;color:#172033;padding:38px;max-width:850px;margin:20px auto;font-family:Arial,Tahoma,sans-serif;line-height:1.9}
+.report-brand{color:#087e73;font-size:14px;font-weight:bold;letter-spacing:1px}
+.print-report h1{font-size:25px;margin:12px 0}
+.report-subtitle{color:#526176}
+.report-alert{padding:12px;border:1px solid #d8ad52;background:#fff8e8;border-radius:8px;margin:18px 0}
+.report-line{padding:9px 0;border-bottom:1px solid #e5e9ef;overflow-wrap:anywhere}
+.print-report h2{font-size:17px;margin:22px 0 6px}
+.print-report li{margin:6px 0}
+.report-foot{border-top:1px solid #dce2e9;padding-top:14px;color:#526176;font-size:12px}
+@media print{
+ @page{size:A4;margin:16mm}
+ body{background:#fff!important;color:#111!important}
+ body *{visibility:hidden!important}
+ #printReport,#printReport *{visibility:visible!important}
+ #printReport{display:block!important;position:absolute;inset:0;width:100%;max-width:none;margin:0;padding:0;box-shadow:none}
+}
