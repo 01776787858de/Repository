@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101827">
+<meta name="description" content="مركز عربي لفحص ظهور البريد الإلكتروني في التسريبات المعروفة ومراجعة أمان الحساب.">
+<title>مركز استخبارات البريد الإلكتروني</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="/"><span class="brand-icon">◈</span><span>مركز استخبارات البريد الإلكتروني<small>فحص التسريبات والمصادر العامة</small></span></a><span class="status"><i></i> منصة فحص الخصوصية</span></header>
+<main class="container">
+<section class="hero"><div class="eyebrow">حماية · خصوصية · وعي رقمي</div><h1>اعرف أين ظهر<br><em>بريدك الإلكتروني</em></h1><p>افحص عنوان البريد في قواعد بيانات التسريبات المعروفة، واعرف أسماء الحوادث وتواريخها وأنواع البيانات المتأثرة.</p></section>
+<section class="panel search-panel"><label for="email">عنوان البريد الإلكتروني</label><div class="search-row"><input id="email" type="email" placeholder="name@example.com" autocomplete="email" dir="ltr"><button id="scanBtn">ابدأ الفحص <span>←</span></button></div>
+<label class="consent"><input id="consent" type="checkbox"><span>أؤكد أن هذا بريدي الإلكتروني أو لدي إذن صريح بفحصه.</span></label>
+<p class="privacy-note">لا نطلب كلمة المرور أو رموز التحقق، ولا نخزّن عنوان البريد في قاعدة بيانات الموقع.</p><div id="message" class="message" role="status" aria-live="polite"></div></section>
+<section id="results" class="results hidden"><div class="result-head"><div><span class="eyebrow">نتيجة الفحص</span><h2 id="resultTitle">التقرير</h2></div><button id="printBtn" class="secondary">حفظ التقرير / طباعة</button></div><div id="summary" class="summary"></div><div id="breachList" class="breach-list"></div><p class="disclaimer">عدم ظهور نتائج لا يعني ضمان سلامة الحساب؛ فقد لا تشمل قواعد البيانات كل الحوادث المعروفة أو غير المنشورة.</p></section>
+<section class="sources"><div class="section-title"><span class="eyebrow">مصادر إضافية</span><h2>راجع أمان حسابك</h2></div><div class="source-grid">
+<a class="source-card" href="https://monitor.mozilla.org/" target="_blank" rel="noopener noreferrer"><span class="source-symbol">◉</span><strong>مراقبة موزيلا</strong><small>خدمة مستقلة لمتابعة ظهور البريد في التسريبات.</small><b>فتح المصدر ↗</b></a>
+<a class="source-card" href="https://myaccount.google.com/security-checkup" target="_blank" rel="noopener noreferrer"><span class="source-symbol">⌑</span><strong>فحص أمان Google</strong><small>راجع إعدادات الحماية والأجهزة والنشاط في حسابك.</small><b>فتح إعدادات الأمان ↗</b></a>
+<a class="source-card" href="https://haveibeenpwned.com/" target="_blank" rel="noopener noreferrer"><span class="source-symbol">⌕</span><strong>مصدر التسريبات</strong><small>معلومات عن قاعدة بيانات التسريبات وخدمات الفحص.</small><b>زيارة المصدر ↗</b></a>
+</div></section><footer>هذا الموقع أداة توعوية. لا يعرض كلمات مرور أو بيانات دخول أو معلومات خاصة مسرّبة.</footer>
+</main><script src="/app.js"></script></body></html>
